@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :authenticate_user!, only: [:create, :upvote]
   protect_from_forgery with: :exception
 
   respond_to :json
